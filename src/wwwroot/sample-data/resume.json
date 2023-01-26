@@ -1,0 +1,159 @@
+{
+    "name": "John Doe",
+    "about": "I am passionate about software development and the cloud",
+    "experiences": [{
+        "companyname": "Microsoft",
+        "title": "Software developer",
+        "tenure": "2021-Present",
+        "description": "Software developer. As part of a team, built 2 services that served 20 000 users and improved the service's profit by 10%."
+    }],
+    "educations": [{
+        "name": "Bachelor of Science in Computer Engineering",
+        "institutionname": "University of Life",
+        "degreeyear": "2022",
+        "description": "Education covering algorithms, programming, operating systems and databases."
+    }],
+    "volunteers": [{
+        "place": "United Nations",
+        "tenure": "2018",
+        "description": "Coordinate with the different Mission components, field offices to have a consistent flow of information to facilitate reporting requirements",
+        "title": "International UN Volunteer Specialist",
+        "url": "https://www.unv.org/"
+    }],
+    "skills": [{
+            "name": "C#",
+            "estimatedlevel": 5,
+            "estimateddescription": "Excellent"
+        },
+        {
+            "name": "Python",
+            "estimatedlevel": 5,
+            "estimateddescription": "Excellent"
+        },
+        {
+            "name": "Microsoft Azure",
+            "estimatedlevel": 2,
+            "estimateddescription": "Foundational knowledge of cloud services and how those services are provided"
+        }
+    ],
+    "certifications": [{
+            "certificateissuer": "Microsoft",
+            "validityperiod": "2020-2023",
+            "title": "Microsoft Certified: Azure Fundamentals",
+            "description": "Foundational knowledge of cloud services and how those services are provided with Microsoft Azure."
+        },
+        {
+            "certificateissuer": "Microsoft",
+            "validityperiod": "2021-2024",
+            "title": "Microsoft Certified: Power Platform Fundamentals",
+            "description": "Foundational knowledge in the business value and product capabilities of Microsoft Power Platform."
+        }
+    ],
+    "communities": [{
+            "communityname": "Microsoft Learn Student Ambassadors",
+            "tenure": "2020-2022",
+            "description": "A program to bring together all the students from all over the world who have the passion for Technology.",
+            "title": "Gold",
+            "url": "https://studentambassadors.microsoft.com/"
+        },
+        {
+            "communityname": "Azure Tech Group",
+            "tenure": "2021-2022",
+            "description": "The Azure Tech Groups program connects technical user groups from across the globe with resources and tools to expand their knowledge of Microsoft technologies.",
+            "title": "Lead",
+            "url": "https://developer.microsoft.com/en-us/azure-tech-groups/"
+        }
+    ],
+    "awards": [{
+            "companyname": "Microsoft",
+            "awardname": "Microsoft MVP - Developer Technologies",
+            "description": "Technology experts who passionately share their knowledge with the community. They are always on the bleeding edge and have an unstoppable urge to get their hands on new, exciting technologies.",
+            "url": "https://mvp.microsoft.com/"
+        },
+        {
+            "companyname": "C# Corner",
+            "awardname": "C# Corner MVP",
+            "description": "Recognition to our top members who are true community leaders and inspiration to others.",
+            "url": "https://www.c-sharpcorner.com/article/how-to-become-a-csharp-corner-mvp/"
+        }
+    ],
+    "patents": [{
+        "issuer": "World Intellectual Property Organization",
+        "validityPeriod": "2040",
+        "title": "Methodology to publish a website to the Cloud",
+        "description": "This patent describes how to publish a website in 5 steps.",
+        "url": "https://www.wipo.int/patents/en/"
+    }],
+    "articles": [{
+            "articlename": "AI-Based Image generator",
+            "journal": "Elsevier",
+            "description": "A Neural Network architecture was designed to create images.",
+            "url": "https://www.elsevier.com/"
+        },
+        {
+            "articlename": "How to Build a Project Portfolio Website with Blazor WebAssembly",
+            "journal": "C# Corner",
+            "description": "In this article I proved how Blazor WebAssembly can help to highligh your CV from others.",
+            "url": "https://www.c-sharpcorner.com/"
+        }
+    ],
+    "conferences": [{
+            "title": "Build a Project Portfolio Website with Blazor WebAssembly and publish it in Azure",
+            "event": "Nenúfar Ep. 8",
+            "description": "A live-coding workshop where I showed how to publish your website to Azure,",
+            "url": "https://linktr.ee/azuretechfrogs"
+        },
+        {
+            "title": "How to become a Leader",
+            "event": "Soft Skills in the House",
+            "description": "A workshop to discuss the main points to be a great leader and how to become one.",
+            "url": ""
+        }
+    ],
+    "mentorships": [{
+        "title": "Hackathon Mentor at HackMIT",
+        "description": "I provided technical assitance on Azure deployments to participants.",
+        "url": "https://hackmit.org/"
+    }],
+    "projects": [{
+            "title": "Project Portfolio Website with Blazor WebAssembly",
+            "description": "Open source project to build your project portfolio and host it online.",
+            "url": "https://github.com/OscarSantos98/portfolio-blazor-template",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantos98/portfolio-blazor-template/main/static/img/skills.png",
+            "keywords": "C#, .NET, Blazor, Web",
+            "priority": 0
+        },
+        {
+            "title": "Blender animations using human pose estimation AI models",
+            "description": "Estimate pose, save the points of each frame of a video and upload those frames into Blender.",
+            "url": "https://github.com/OscarSantos98/TF_pose_estimation_and_Blender",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantos98/TF_pose_estimation_and_Blender/main/static/leg.gif",
+            "keywords": "Python, TensorFlow, AI",
+            "priority": 3
+        },
+        {
+            "title": "IoT Application with Flask and MicroPython",
+            "description": "A flask server and micropython scripts to send data over http requests..",
+            "url": "https://github.com/OscarSantos98/Building_your_First_IoT_Application_with_Flask_and_MicroPython",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantos98/Building_your_First_IoT_Application_with_Flask_and_MicroPython/main/static/demo.JPG",
+            "keywords": "Python, Flask, MicroPython, IoT",
+            "priority": 6
+        },
+        {
+            "title": "Dynamics of SCARA Robot",
+            "description": "Position, velocity, acceleration and torque calculation of a SCARA Robot.",
+            "url": "https://github.com/OscarSantos98/SCARA",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantos98/SCARA/master/static/header.png",
+            "keywords": "Python, Matplotlib, Robotics",
+            "priority": 2
+        },
+        {
+            "title": "Calculator",
+            "description": "Desktop calculator built with .NET and Windows Forms.",
+            "url": "https://github.com/OscarSantos98/Calculator",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantos98/Calculator/main/static/demo.JPG",
+            "keywords": "C#, .NET, Windows Forms",
+            "priority": 10
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+<div class="volunteer">
+    <h3>@data?.Title</h3>
+    <h4>@data?.Place (@data?.Tenure)</h4>
+    <div>@data?.Description</div>
+    <a href="@data?.Url">Know more</a>
+</div>
+
+@code {
+    [Parameter]
+    public VolunteerModel? data { get; set; }
+}

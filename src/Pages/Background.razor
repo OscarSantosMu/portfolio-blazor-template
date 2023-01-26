@@ -1,0 +1,75 @@
+﻿@page "/background"
+@using Portfolio.ViewModels
+@inject IResumeViewModel _resumeViewModel
+
+<PageTitle>Background</PageTitle>
+
+<div class="about">
+  @if (_resumeViewModel != null)
+  {
+  <h2>About @_resumeViewModel.Name</h2>
+    <p>@_resumeViewModel?.About</p>
+  }
+</div>
+
+<div class="experiences">
+  <h2>Experience</h2>
+
+  @if (_resumeViewModel != null && _resumeViewModel.Experiences != null)
+  {
+    foreach (var experienceModel in _resumeViewModel.Experiences)
+    {
+        <Experience data=@experienceModel></Experience>
+    }
+  }
+  else
+  {
+    <div class="alert alert-warning" role="alert">
+      <h4 class="alert-heading">Content Not Found</h4>
+      <p>Sorry, we could not load this section due to an error or unexisting content.</p>
+    </div>
+  }
+</div>
+
+<div class="educations">
+    <h2>Education</h2>
+
+    @if (_resumeViewModel != null && _resumeViewModel.Educations != null)
+    {
+        foreach (var educationModel in _resumeViewModel.Educations)
+        {
+            <Education data=@educationModel></Education>
+        }
+    }
+    else
+    {
+      <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Content Not Found</h4>
+        <p>Sorry, we could not load this section due to an error or unexisting content.</p>
+      </div>
+    }
+</div>
+
+<div class="volunteers">
+    <h2>Volunteering</h2>
+
+    @if (_resumeViewModel != null && _resumeViewModel.Volunteers != null)
+    {
+        foreach (var volunteerModel in _resumeViewModel.Volunteers)
+        {
+            <Volunteer data=@volunteerModel></Volunteer>
+        }
+    }
+    else
+    {
+      <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Content Not Found</h4>
+        <p>Sorry, we could not load this section due to an error or unexisting content.</p>
+      </div>
+    }
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync() => await _resumeViewModel.GetBackground();
+
+}

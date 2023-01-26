@@ -1,0 +1,11 @@
+<div class="conference">
+    <h3> @data?.Title </h3>
+    <h4> @data?.Event </h4>
+    <div> @data?.Description </div>
+    <a href="@data?.Url"> Know more </a>
+</div>
+
+@code {
+    [Parameter]
+    public ConferenceModel? data { get; set; }
+}

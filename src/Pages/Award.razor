@@ -1,0 +1,11 @@
+<div class= "award">
+    <h3> @data?.AwardName </h3>
+    <h4> by @data?.CompanyName </h4>
+    <div> @data?.Description </div>
+    <a href = "@data?.Url"> Know more </a>
+</div>
+
+@code {
+    [Parameter]
+    public AwardModel? data { get; set; }
+}

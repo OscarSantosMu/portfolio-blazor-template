@@ -1,0 +1,11 @@
+<div class= "patent">
+    <h3> @data?.Title </h3>
+    <h4> @data?.Issuer, valid until @data?.ValidityPeriod </h4>
+    <div> @data?.Description </div>
+    <a href = "@data?.Url"> Know more </a>
+</div>
+
+@code {
+    [Parameter]
+    public PatentModel? data { get; set; }
+}

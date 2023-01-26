@@ -1,0 +1,20 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <span class="oi oi-layers" aria-hidden="true"></span>
+        &nbspThis template was made by <strong><a href="https://github.com/OscarSantos98" target="_blank">Oscar Santos</a></strong>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+
+        <IssuePrompt></IssuePrompt>
+    </main>
+</div>
