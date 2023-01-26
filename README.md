@@ -1,9 +1,10 @@
 # Portfolio Blazor Template
 This is a customizable Blazor portfolio project.
 
-Example of skills             |  Example of projects
-:-------------------------:|:-------------------------:
-![](static/img/skills.png)       |   ![](static/img/projects.png)
+|   Project   |          
+|:-------------------------:|
+|   ![](static/img/skills.png)  |
+|   ![](static/img/projects.png) |
 
 
 # Table of Contents
@@ -108,7 +109,7 @@ The data is a JSON file and looks like the following hierarchy:
  "articles" : [],
  "conferences" : [],
  "mentorships" : [],
- "projects" : [],
+ "projects" : []
 }
 ```
 
