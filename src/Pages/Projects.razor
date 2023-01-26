@@ -1,0 +1,39 @@
+@page "/projects"
+@using Portfolio.ViewModels
+@inject IResumeViewModel _resumeViewModel
+
+<PageTitle>Projects</PageTitle>
+
+<div class="about">
+  @if (_resumeViewModel != null)
+  {
+  <h2>About @_resumeViewModel.Name</h2>
+    <p>@_resumeViewModel?.About</p>
+  }
+</div>
+
+<div class="projects">
+    <h2>Projects</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+
+    @if (_resumeViewModel != null && _resumeViewModel.Projects != null)
+    {
+        foreach (var projectModel in _resumeViewModel.Projects)
+        {
+            <Project data=@projectModel></Project>
+        }
+    }
+    else
+    {
+      <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Content Not Found</h4>
+        <p>Sorry, we could not load this section due to an error or unexisting content.</p>
+      </div>
+    }
+    </div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync() => await _resumeViewModel.GetProjects();
+
+}

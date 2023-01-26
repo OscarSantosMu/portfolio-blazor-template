@@ -1,0 +1,56 @@
+﻿@page "/skills"
+@using Portfolio.ViewModels
+@inject IResumeViewModel _resumeViewModel
+
+<PageTitle>Skills</PageTitle>
+
+<div class="about">
+  @if (_resumeViewModel != null)
+  {
+  <h2>About @_resumeViewModel.Name</h2>
+    <p>@_resumeViewModel?.About</p>
+  }
+</div>
+
+<div class="skills">
+  <h2>Skills</h2>
+
+  @if (_resumeViewModel != null && _resumeViewModel.Skills != null)
+  {
+    foreach (var skillModel in _resumeViewModel.Skills)
+    {
+        <Skill data=@skillModel></Skill>
+    }
+  }
+  else
+  {
+    <div class="alert alert-warning" role="alert">
+      <h4 class="alert-heading">Content Not Found</h4>
+      <p>Sorry, we could not load this section due to an error or unexisting content.</p>
+    </div>
+  }
+</div>
+
+<div class="certifications">
+    <h2>Certifications</h2>
+
+    @if (_resumeViewModel != null && _resumeViewModel.Certifications != null)
+    {
+        foreach (var certificationModel in _resumeViewModel.Certifications)
+        {
+            <Certification data=@certificationModel></Certification>
+        }
+    }
+    else
+    {
+      <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Content Not Found</h4>
+        <p>Sorry, we could not load this section due to an error or unexisting content.</p>
+      </div>
+    }
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync() => await _resumeViewModel.GetSkills();
+
+}

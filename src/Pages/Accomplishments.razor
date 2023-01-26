@@ -1,0 +1,113 @@
+@page "/accomplishments"
+@using Portfolio.ViewModels
+@inject IResumeViewModel _resumeViewModel
+
+<PageTitle>Accomplishments</PageTitle>
+
+<div class="about">
+  @if (_resumeViewModel != null)
+  {
+  <h2>About @_resumeViewModel.Name</h2>
+    <p>@_resumeViewModel?.About</p>
+  }
+</div>
+
+<div class="awards">
+  <h2>Awards</h2>
+
+  @if (_resumeViewModel != null && _resumeViewModel.Awards != null)
+  {
+    foreach (var awardsModel in _resumeViewModel.Awards)
+    {
+        <Award data=@awardsModel></Award>
+    }
+  }
+  else
+  {
+    <div class="alert alert-warning" role="alert">
+      <h4 class="alert-heading">Content Not Found</h4>
+      <p>Sorry, we could not load this section due to an error or unexisting content.</p>
+    </div>
+  }
+</div>
+
+<div class="patents">
+    <h2>Patents</h2>
+
+    @if (_resumeViewModel != null && _resumeViewModel.Patents != null)
+    {
+        foreach (var patentModel in _resumeViewModel.Patents)
+        {
+            <Patent data=@patentModel></Patent>
+        }
+    }
+    else
+    {
+      <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Content Not Found</h4>
+        <p>Sorry, we could not load this section due to an error or unexisting content.</p>
+      </div>
+    }
+</div>
+
+<div class="articles">
+    <h2>Articles</h2>
+
+    @if (_resumeViewModel != null && _resumeViewModel.Articles != null)
+    {
+        foreach (var articleModel in _resumeViewModel.Articles)
+        {
+            <Article data=@articleModel></Article>
+        }
+    }
+    else
+    {
+      <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Content Not Found</h4>
+        <p>Sorry, we could not load this section due to an error or unexisting content.</p>
+      </div>
+    }
+</div>
+
+<div class="conferences">
+    <h2>Conferences</h2>
+
+    @if (_resumeViewModel != null && _resumeViewModel.Conferences != null)
+    {
+        foreach (var conferenceModel in _resumeViewModel.Conferences)
+        {
+            <Conference data=@conferenceModel></Conference>
+        }
+    }
+    else
+    {
+      <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Content Not Found</h4>
+        <p>Sorry, we could not load this section due to an error or unexisting content.</p>
+      </div>
+    }
+</div>
+
+<div class="mentorships">
+    <h2>Mentorships</h2>
+
+    @if (_resumeViewModel != null && _resumeViewModel.Mentorships != null)
+    {
+        foreach (var mentorshipModel in _resumeViewModel.Mentorships)
+        {
+            <Mentorship data=@mentorshipModel></Mentorship>
+        }
+    }
+    else
+    {
+      <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Content Not Found</h4>
+        <p>Sorry, we could not load this section due to an error or unexisting content.</p>
+      </div>
+    }
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync() => await _resumeViewModel.GetAccomplishments();
+
+}

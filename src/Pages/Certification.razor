@@ -1,0 +1,10 @@
+<div class="certification">
+    <h3>@data?.Title</h3>
+    <h4>@data?.CertificateIssuer (@data?.ValidityPeriod)</h4>
+    <div>@data?.Description</div>
+</div>
+
+@code {
+    [Parameter]
+    public CertificationModel? data { get; set; }
+}

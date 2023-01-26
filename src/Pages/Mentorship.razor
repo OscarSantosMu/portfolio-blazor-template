@@ -1,0 +1,10 @@
+<div class= "mentorship">
+    <h3> @data?.Title </h3>
+    <div> @data?.Description </div>
+    <a href = "@data?.Url"> Know more </a>
+</div>
+
+@code {
+    [Parameter]
+    public MentorshipModel? data { get; set; }
+}

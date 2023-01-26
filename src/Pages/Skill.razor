@@ -1,0 +1,20 @@
+<div class="skill">
+    <h3>@data?.Name</h3>
+    <span>@data?.EstimatedDescription</span>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="@data?.EstimatedLevel" aria-valuemin="0" aria-valuemax="5" style="@progress"></div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public SkillModel? data { get; set; }
+    public string? progress { get; set; }
+    private async Task<string> CalculateProgress()
+    {
+        progress = $"width: {@data?.EstimatedLevel * 20}%";
+        return await Task.FromResult(progress);
+    }
+
+    protected override async Task OnInitializedAsync() => await CalculateProgress(); 
+}
