@@ -23,12 +23,12 @@
     "skills": [{
             "name": "C#",
             "estimatedlevel": 5,
-            "estimateddescription": "Excellent"
+            "estimateddescription": "Proficient"
         },
         {
             "name": "Python",
             "estimatedlevel": 5,
-            "estimateddescription": "Excellent"
+            "estimateddescription": "Proficient"
         },
         {
             "name": "Microsoft Azure",
