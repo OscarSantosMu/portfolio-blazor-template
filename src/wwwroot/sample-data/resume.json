@@ -2,20 +2,27 @@
     "name": "John Doe",
     "about": "I am passionate about software development and the cloud",
     "experiences": [{
-        "companyname": "Microsoft",
-        "title": "Software developer",
-        "tenure": "2021-Present",
-        "description": "Software developer. As part of a team, built 2 services that served 20 000 users and improved the service's profit by 10%."
-    }],
+            "companyname": "Contoso",
+            "title": "Jr. Software Engineer",
+            "tenure": "2021-Present",
+            "description": "Software developer. As part of a team, built 2 services that served 20 000 users and improved the service's profit by 10%."
+        },
+        {
+            "companyname": "Acme",
+            "title": "Software Engineer Intern",
+            "tenure": "2019-2021",
+            "description": "Software developer. As part of a team, built 2 services that served 20 000 users and improved the service's profit by 10%."
+        }
+    ],
     "educations": [{
         "name": "Bachelor of Science in Computer Engineering",
         "institutionname": "University of Life",
-        "degreeyear": "2022",
+        "degreeyear": "2019",
         "description": "Education covering algorithms, programming, operating systems and databases."
     }],
     "volunteers": [{
         "place": "United Nations",
-        "tenure": "2018",
+        "tenure": "2015-2016",
         "description": "Coordinate with the different Mission components, field offices to have a consistent flow of information to facilitate reporting requirements",
         "title": "International UN Volunteer Specialist",
         "url": "https://www.unv.org/"
@@ -51,14 +58,14 @@
     ],
     "communities": [{
             "communityname": "Microsoft Learn Student Ambassadors",
-            "tenure": "2020-2022",
+            "tenure": "2017-2019",
             "description": "A program to bring together all the students from all over the world who have the passion for Technology.",
             "title": "Gold",
             "url": "https://studentambassadors.microsoft.com/"
         },
         {
             "communityname": "Azure Tech Group",
-            "tenure": "2021-2022",
+            "tenure": "2018-2022",
             "description": "The Azure Tech Groups program connects technical user groups from across the globe with resources and tools to expand their knowledge of Microsoft technologies.",
             "title": "Lead",
             "url": "https://developer.microsoft.com/en-us/azure-tech-groups/"
@@ -101,7 +108,7 @@
             "title": "Build a Project Portfolio Website with Blazor WebAssembly and publish it in Azure",
             "event": "Nenúfar Ep. 8",
             "description": "A live-coding workshop where I showed how to publish your website to Azure,",
-            "url": "https://linktr.ee/azuretechfrogs"
+            "url": "https://github.com/OscarSantosMu/portfolio-blazor-template"
         },
         {
             "title": "How to become a Leader",
@@ -118,40 +125,40 @@
     "projects": [{
             "title": "Project Portfolio Website with Blazor WebAssembly",
             "description": "Open source project to build your project portfolio and host it online.",
-            "url": "https://github.com/OscarSantos98/portfolio-blazor-template",
-            "imageurl": "https://raw.githubusercontent.com/OscarSantos98/portfolio-blazor-template/main/static/img/skills.png",
+            "url": "https://github.com/OscarSantosMu/portfolio-blazor-template",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/portfolio-blazor-template/main/static/img/skills.png",
             "keywords": "C#, .NET, Blazor, Web",
             "priority": 0
         },
         {
             "title": "Blender animations using human pose estimation AI models",
             "description": "Estimate pose, save the points of each frame of a video and upload those frames into Blender.",
-            "url": "https://github.com/OscarSantos98/TF_pose_estimation_and_Blender",
-            "imageurl": "https://raw.githubusercontent.com/OscarSantos98/TF_pose_estimation_and_Blender/main/static/leg.gif",
+            "url": "https://github.com/OscarSantosMu/TF_pose_estimation_and_Blender",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/TF_pose_estimation_and_Blender/main/static/leg.gif",
             "keywords": "Python, TensorFlow, AI",
             "priority": 3
         },
         {
             "title": "IoT Application with Flask and MicroPython",
             "description": "A flask server and micropython scripts to send data over http requests..",
-            "url": "https://github.com/OscarSantos98/Building_your_First_IoT_Application_with_Flask_and_MicroPython",
-            "imageurl": "https://raw.githubusercontent.com/OscarSantos98/Building_your_First_IoT_Application_with_Flask_and_MicroPython/main/static/demo.JPG",
+            "url": "https://github.com/OscarSantosMu/Building_your_First_IoT_Application_with_Flask_and_MicroPython",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/Building_your_First_IoT_Application_with_Flask_and_MicroPython/main/static/demo.JPG",
             "keywords": "Python, Flask, MicroPython, IoT",
             "priority": 6
         },
         {
             "title": "Dynamics of SCARA Robot",
             "description": "Position, velocity, acceleration and torque calculation of a SCARA Robot.",
-            "url": "https://github.com/OscarSantos98/SCARA",
-            "imageurl": "https://raw.githubusercontent.com/OscarSantos98/SCARA/master/static/header.png",
+            "url": "https://github.com/OscarSantosMu/SCARA",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/SCARA/master/static/header.png",
             "keywords": "Python, Matplotlib, Robotics",
             "priority": 2
         },
         {
             "title": "Calculator",
             "description": "Desktop calculator built with .NET and Windows Forms.",
-            "url": "https://github.com/OscarSantos98/Calculator",
-            "imageurl": "https://raw.githubusercontent.com/OscarSantos98/Calculator/main/static/demo.JPG",
+            "url": "https://github.com/OscarSantosMu/Calculator",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/Calculator/main/static/demo.JPG",
             "keywords": "C#, .NET, Windows Forms",
             "priority": 10
         }
