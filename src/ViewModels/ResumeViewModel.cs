@@ -64,6 +64,7 @@ namespace Portfolio.ViewModels
             this.Experiences = resumeViewModel?.Experiences;
             this.Educations = resumeViewModel?.Educations;
             this.Volunteers = resumeViewModel?.Volunteers;
+            this.Communities = resumeViewModel?.Communities;
 
         }
 
