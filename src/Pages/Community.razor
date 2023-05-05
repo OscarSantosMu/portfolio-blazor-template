@@ -1,0 +1,14 @@
+<div class="community">
+    <h3>@data?.CommunityName</h3>
+    <h4>@data?.Title</h4>
+    <div class="resume-date text-md-right">
+        <span class="text-primary">@data?.Tenure</span>
+    </div>
+    <div>@data?.Description</div>
+    <a href="@data?.Url"> Know more </a>
+</div>
+
+@code {
+    [Parameter]
+    public CommunityModel? data { get; set; }
+}

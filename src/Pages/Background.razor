@@ -69,6 +69,25 @@
     }
 </div>
 
+<div class="communities">
+    <h2>Tech Communities</h2>
+
+    @if (_resumeViewModel != null && _resumeViewModel.Communities != null)
+    {
+        foreach (var communityModel in _resumeViewModel.Communities)
+        {
+            <Community data=@communityModel></Community>
+        }
+    }
+    else
+    {
+      <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Content Not Found</h4>
+        <p>Sorry, we could not load this section due to an error or unexisting content.</p>
+      </div>
+    }
+</div>
+
 @code {
     protected override async Task OnInitializedAsync() => await _resumeViewModel.GetBackground();
 
