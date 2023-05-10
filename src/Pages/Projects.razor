@@ -14,14 +14,86 @@
 
 <div class="projects">
     <h2>Projects</h2>
+    
+    <h4>Filter by</h4>
+      <EditForm Model="@keyWords" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="domain">Domain</label>
+                    <InputSelect id="domain" class="form-control-dropdown-filter" @bind-Value="@keyWords.selectedDomain">
+                        <option value="">All</option>
+                        @foreach (var domain in domains)
+                        {
+                            <option value="@domain">@domain</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="condition">and/or</label>
+                    <InputSelect id="condition" class="form-control-dropdown-filter" @bind-Value="@keyWords.condition">
+                        <option value="or">or</option>
+                        <option value="and">and</option>
+                    </InputSelect>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="techStack">Tech Stack</label>
+                    <InputSelect id="techStack" class="form-control-dropdown-filter" @bind-Value="@keyWords.selectedTechStack">
+                        <option value="">All</option>
+                        @foreach (var techStack in techStacks)
+                        {
+                            <option value="@techStack">@techStack</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        </EditForm>
+
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
 
     @if (_resumeViewModel != null && _resumeViewModel.Projects != null)
     {
-        foreach (var projectModel in _resumeViewModel.Projects)
+      foreach (var projectModel in _resumeViewModel.Projects)
+      {
+        @* Console.WriteLine($"Project: {projectModel.Title}"); *@
+        List<string> keyWords = projectModel.KeyWords.Split(',').ToList();
+        // Apply left strip to all keyWords
+        keyWords = keyWords.Select(keyWord => keyWord.TrimStart()).ToList();
+        // If no filters are selected, display all projects
+        if (string.IsNullOrEmpty(selectedDomain) && string.IsNullOrEmpty(selectedTechStack))
         {
             <Project data=@projectModel></Project>
         }
+        // If the project matches the selected domain or tech stack, display it
+        else if ((condition == "or") && ((selectedDomain != "" && keyWords.Contains(selectedDomain))
+                || (selectedTechStack != "" && keyWords.Contains(selectedTechStack))))
+        {
+            <Project data=@projectModel></Project>
+        }
+        // If the project matches the selected domain and tech stack, display it
+        else if ((condition == "and") && ((selectedDomain != "" && keyWords.Contains(selectedDomain))
+                && (selectedTechStack != "" && keyWords.Contains(selectedTechStack))))
+        {
+            <Project data=@projectModel></Project>
+        }
+        else
+        {
+          @* Console.WriteLine("No projects to display");
+          Console.WriteLine($"Domain: {selectedDomain}");
+          Console.WriteLine($"Tech Stack: {selectedTechStack}");
+          keyWords.ForEach(keyWord => Console.WriteLine(keyWord)); *@
+        }
+      }
     }
     else
     {
@@ -34,6 +106,24 @@
 </div>
 
 @code {
+    private KeyWords keyWords = new KeyWords();
+    private string? condition { get; set; } = "or";
+    private string? selectedDomain { get; set; } = "";
+    private string? selectedTechStack { get; set; } = "";
+    List<string> domains = new List<string> { "AI", "IoT", "Web", "Robotics" };
+    List<string> techStacks = new List<string> { "Python", "C#", "C++", ".NET", "Blazor", "Flask", "TensorFlow", "MicroPython", "Matplotlib", "OpenGL" , "Windows Forms" };
+
     protected override async Task OnInitializedAsync() => await _resumeViewModel.GetProjects();
 
+    private void HandleValidSubmit()
+    {
+        // Do something with the selected values
+        Console.WriteLine($"Selected condition: {keyWords.condition}");
+        Console.WriteLine($"Selected domain: {keyWords.selectedDomain}");
+        Console.WriteLine($"Selected tech stack: {keyWords.selectedTechStack}");
+        condition = keyWords?.condition ?? "or";
+        selectedDomain = keyWords?.selectedDomain;
+        selectedTechStack = keyWords?.selectedTechStack;
+        Console.WriteLine($"Condition: {condition}");
+    }
 }
