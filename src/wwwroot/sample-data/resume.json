@@ -147,12 +147,20 @@
             "priority": 6
         },
         {
+            "title": "OOP Programming and Robotics",
+            "description": "A C++ library to control a 6 degrees of freedom robotic arm in a OpenGl environment with a GUI.",
+            "url": "https://github.com/OscarSantosMu/Proyecto_POO",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/Proyecto_POO/main/static/img/6-dof-robot.png",
+            "keywords": "C++, OpenGL, Robotics",
+            "priority": 2
+        },
+        {
             "title": "Dynamics of SCARA Robot",
             "description": "Position, velocity, acceleration and torque calculation of a SCARA Robot.",
             "url": "https://github.com/OscarSantosMu/SCARA",
             "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/SCARA/master/static/header.png",
             "keywords": "Python, Matplotlib, Robotics",
-            "priority": 2
+            "priority": 4
         },
         {
             "title": "Calculator",
