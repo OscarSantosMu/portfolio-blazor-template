@@ -1,4 +1,6 @@
 ﻿@page "/"
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
 <PageTitle>Index</PageTitle>
 
@@ -8,5 +10,28 @@
 Welcome to your new Portfolio app. In this home page you will find instructions to set up everything you need to use this template.
 </div>
 
-<Instructions></Instructions>
+@if (!allChecked)
+{
+    <Instructions OnAllChecked="@HandleAllChecked"></Instructions>
+}
+else
+{
+    NavigationManager.NavigateTo("/background", forceLoad: true);
+}
 
+@code {
+    private bool allChecked;
+
+    private async Task HandleAllChecked(bool allChecked)
+    {
+        this.allChecked = allChecked;
+        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "allChecked", allChecked);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var allCheckedStr = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "allChecked");
+        allChecked = Convert.ToBoolean(allCheckedStr);
+    }
+
+}
