@@ -1,4 +1,6 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@inject IJSRuntime JSRuntime
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Portfolio</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -9,11 +11,14 @@
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
+        @if (!allChecked)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    <span class="oi oi-home" aria-hidden="true"></span> Home
+                </NavLink>
+            </div>   
+        }
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="background" Match="NavLinkMatch.All">
                 <span class="oi oi-list-rich" aria-hidden="true"></span> Background
@@ -42,8 +47,17 @@
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
+    private bool allChecked;
+
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
     }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var allCheckedStr = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "allChecked");
+        allChecked = Convert.ToBoolean(allCheckedStr);
+    }
+
 }
