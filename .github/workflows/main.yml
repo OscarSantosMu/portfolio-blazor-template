@@ -13,6 +13,12 @@ jobs:
     # uses GitHub's checkout action to checkout code form the master branch
     - uses: actions/checkout@v2
     
+    # Run Bash Script to update development code to production code
+    - name: Remove instructions page
+      run: |
+        chmod +x ./src/Scripts/remove-instructions.sh  
+        bash ./src/Scripts/remove-instructions.sh
+    
     # Install .NET Core SDK
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v2
