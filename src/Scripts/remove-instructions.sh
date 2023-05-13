@@ -6,7 +6,7 @@ cd src || exit
 if [ -f "Pages/Index.razor" ]; then
     echo "File exists. Updating file..."
     sed -i 's/await JSRuntime.InvokeAsync<string>("localStorage.getItem", "allChecked");/"true";/g' Pages/Index.razor
-    sed -i 's/NavigationManager.NavigateTo("/background", forceLoad: true);/NavigationManager.NavigateTo("/portfolio-blazor-template/background", forceLoad: true);/g' Pages/Index.razor
+    sed -i 's|NavigationManager.NavigateTo("/background", forceLoad: true);|NavigationManager.NavigateTo("/portfolio-blazor-template/background", forceLoad: true);|g' Pages/Index.razor
 else
     echo "File does not exist"
 fi
@@ -22,7 +22,7 @@ fi
 # Check if file exists
 if [ -f "Pages/ProjectCard.razor" ]; then
     echo "File exists. Updating file..."
-    sed -i 's/<a href="/project/@data?.Title" class="projectUrl">/<a href="/portfolio-blazor-template/project/@data?.Title" class="projectUrl">/g' Pages/ProjectCard.razor
+    sed -i 's|<a href="/project/@data?.Title" class="projectUrl">|<a href="/portfolio-blazor-template/project/@data?.Title" class="projectUrl">|g' Pages/ProjectCard.razor
 else
     echo "File does not exist"
 fi
