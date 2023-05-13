@@ -125,7 +125,8 @@
     "projects": [{
             "title": "Project Portfolio Website with Blazor WebAssembly",
             "description": "Open source project to build your project portfolio and host it online.",
-            "url": "https://github.com/OscarSantosMu/portfolio-blazor-template",
+            "repourl": "https://OscarSantosMu/portfolio-blazor-template",
+            "url": "https://oscarsantosmu.github.io/portfolio-blazor-template",
             "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/portfolio-blazor-template/main/static/img/skills.png",
             "keywords": "C#, .NET, Blazor, Web",
             "priority": 0
@@ -133,7 +134,8 @@
         {
             "title": "Blender animations using human pose estimation AI models",
             "description": "Estimate pose, save the points of each frame of a video and upload those frames into Blender.",
-            "url": "https://github.com/OscarSantosMu/TF_pose_estimation_and_Blender",
+            "repourl": "https://github.com/OscarSantosMu/TF_pose_estimation_and_Blender",
+            "url": "https://oscarsantosmu.github.io/TF_pose_estimation_and_Blender/",
             "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/TF_pose_estimation_and_Blender/main/static/leg.gif",
             "keywords": "Python, TensorFlow, AI",
             "priority": 3
@@ -141,23 +143,35 @@
         {
             "title": "IoT Application with Flask and MicroPython",
             "description": "A flask server and micropython scripts to send data over http requests..",
-            "url": "https://github.com/OscarSantosMu/Building_your_First_IoT_Application_with_Flask_and_MicroPython",
+            "repourl": "https://github.com/OscarSantosMu/Building_your_First_IoT_Application_with_Flask_and_MicroPython",
+            "url": "https://oscarsantosmu.github.io/Building_your_First_IoT_Application_with_Flask_and_MicroPython/",
             "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/Building_your_First_IoT_Application_with_Flask_and_MicroPython/main/static/demo.JPG",
             "keywords": "Python, Flask, MicroPython, IoT",
             "priority": 6
         },
         {
+            "title": "OOP Programming and Robotics",
+            "description": "A C++ library to control a 6 degrees of freedom robotic arm in a OpenGl environment with a GUI.",
+            "repourl": "https://github.com/OscarSantosMu/Proyecto_POO",
+            "url": "https://user-images.githubusercontent.com/38818848/236541138-a3a1f37d-9d8e-48e6-863a-e631b529d588.mp4",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/Proyecto_POO/main/static/img/6-dof-robot.png",
+            "keywords": "C++, OpenGL, Robotics",
+            "priority": 2
+        },
+        {
             "title": "Dynamics of SCARA Robot",
             "description": "Position, velocity, acceleration and torque calculation of a SCARA Robot.",
-            "url": "https://github.com/OscarSantosMu/SCARA",
+            "repourl": "https://github.com/OscarSantosMu/SCARA",
+            "url": "https://oscarsantosmu.github.io/SCARA/",
             "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/SCARA/master/static/header.png",
             "keywords": "Python, Matplotlib, Robotics",
-            "priority": 2
+            "priority": 4
         },
         {
             "title": "Calculator",
             "description": "Desktop calculator built with .NET and Windows Forms.",
-            "url": "https://github.com/OscarSantosMu/Calculator",
+            "repourl": "https://github.com/OscarSantosMu/Calculator",
+            "url": "https://oscarsantosmu.github.io/Calculator/",
             "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/Calculator/main/static/demo.JPG",
             "keywords": "C#, .NET, Windows Forms",
             "priority": 10

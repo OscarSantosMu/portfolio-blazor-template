@@ -30,8 +30,6 @@
 
 main[b-p531rfodtv] {
     flex: 1;
-    background-image: url(../img/dalle-background.png);
-    background-size: cover;
 }
 
 .sidebar[b-p531rfodtv] {
@@ -102,6 +100,39 @@ main[b-p531rfodtv] {
     article[b-p531rfodtv] {
         padding-left: 2rem !important;
         padding-right: 1.5rem !important;
+    }
+    .float-md-left[b-p531rfodtv] {
+        float: left !important;
+    }
+    .float-md-right[b-p531rfodtv] {
+        float: right !important;
+    }
+    .float-md-none[b-p531rfodtv] {
+        float: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .float-lg-left[b-p531rfodtv] {
+        float: left !important;
+    }
+    .float-lg-right[b-p531rfodtv] {
+        float: right !important;
+    }
+    .float-lg-none[b-p531rfodtv] {
+        float: none !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .float-xl-left[b-p531rfodtv] {
+        float: left !important;
+    }
+    .float-xl-right[b-p531rfodtv] {
+        float: right !important;
+    }
+    .float-xl-none[b-p531rfodtv] {
+        float: none !important;
     }
 }
 /* /Shared/NavMenu.razor.rz.scp.css */
