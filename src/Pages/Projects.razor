@@ -72,19 +72,19 @@
         // If no filters are selected, display all projects
         if (string.IsNullOrEmpty(selectedDomain) && string.IsNullOrEmpty(selectedTechStack))
         {
-            <Project data=@projectModel></Project>
+            <ProjectCard data=@projectModel></ProjectCard>
         }
         // If the project matches the selected domain or tech stack, display it
         else if ((condition == "or") && ((selectedDomain != "" && keyWords.Contains(selectedDomain))
                 || (selectedTechStack != "" && keyWords.Contains(selectedTechStack))))
         {
-            <Project data=@projectModel></Project>
+            <ProjectCard data=@projectModel></ProjectCard>
         }
         // If the project matches the selected domain and tech stack, display it
         else if ((condition == "and") && ((selectedDomain != "" && keyWords.Contains(selectedDomain))
                 && (selectedTechStack != "" && keyWords.Contains(selectedTechStack))))
         {
-            <Project data=@projectModel></Project>
+            <ProjectCard data=@projectModel></ProjectCard>
         }
         else
         {
