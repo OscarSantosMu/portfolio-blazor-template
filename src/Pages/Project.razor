@@ -1,26 +1,52 @@
-<div class= "project">
-    @* <h3> @data?.Title </h3>
-    <div> @data?.Description </div>
-    <a href = "@data?.Url"> Know more </a> *@
-    
-        <div class="col">
-            <a href="@data?.Url" class="projectUrl" target="_blank">
-                <div class="card h-100">
-                <img src="@data?.ImageURL" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">@data?.Title</h5>
-                    <p class="card-text">@data?.Description</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Keywords: @data?.KeyWords</small>
-                </div>
-                </div>
-            </a>
-        </div>
-        
+@* Define route for project name *@
+@page "/project/{ProjectName}"
+@page "/project"
+@using Portfolio.ViewModels
+@inject IResumeViewModel _resumeViewModel
+
+<PageTitle>Project</PageTitle>
+
+<div class="about">
+  @if (_resumeViewModel != null)
+  {
+  <h2>About @_resumeViewModel.Name</h2>
+    <p>@_resumeViewModel?.About</p>
+  }
 </div>
+
+<div class="project">
+  @if (_resumeViewModel != null)
+  {
+    @* Console.WriteLine(@project?.Title); *@
+    <h2>@project?.Title</h2>
+    <p>@project?.Description</p>
+    List<string> keyWords = project?.KeyWords?.Split(',').ToList() ?? new List<string>();
+    // Apply left strip to all keyWords
+    keyWords = keyWords.Select(keyWord => keyWord.TrimStart()).ToList();
+    <h4>Keywords:</h4>
+    @foreach (var keyWord in keyWords)
+    {
+      <span class="badge btn-primary mx-1">@keyWord</span>
+    }
+    @if (!string.IsNullOrEmpty(project?.RepoUrl))
+    {
+      <div class="my-4"><a href='@project?.RepoUrl' target="_blank"><img alt='GitHub' src='https://img.shields.io/badge/Get_code on GitHub-100000?style=for-the-badge&logo=GitHub&logoColor=white&labelColor=black&color=black'/></a></div>
+    }
+    
+    <div class="iframe-container">
+        <iframe src="@project?.Url" class="custom-iframe"></iframe>
+    </div>
+
+  }
+</div>
+
 
 @code {
     [Parameter]
-    public ProjectModel? data { get; set; }
+    public string ProjectName { get; set; }
+    public ProjectModel? project { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        project = await _resumeViewModel.GetProject(ProjectName);
+    }
 }

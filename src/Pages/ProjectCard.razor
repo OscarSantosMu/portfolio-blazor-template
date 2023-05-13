@@ -1,0 +1,26 @@
+<div class= "projectCard">
+    @* <h3> @data?.Title </h3>
+    <div> @data?.Description </div>
+    <a href = "@data?.Url"> Know more </a> *@
+    
+        <div class="col">
+            <a href="/project/@data?.Title" class="projectUrl">
+                <div class="card h-100">
+                <img src="@data?.ImageURL" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@data?.Title</h5>
+                    <p class="card-text">@data?.Description</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Keywords: @data?.KeyWords</small>
+                </div>
+                </div>
+            </a>
+        </div>
+        
+</div>
+
+@code {
+    [Parameter]
+    public ProjectModel? data { get; set; }
+}
