@@ -72,7 +72,7 @@ The terminal will display a variety of output, including the URL the site can be
 
 ### Components
 
-- `Background`, a "smart" component you can navigate to via `/background`. This component contains the `About`, `Experience`, `Education` and `Volunteer` presentation components that display this part of the resume.
+- `Background`, a "smart" component you can navigate to via `/background`. This component contains the `About`, `Experience`, `Education`, `Volunteer` and `Community` presentation components that display this part of the resume.
 - `Skills`, a "smart" component you can navigate to via `/skills`. This component contains the `About`, `Skill` and `Certification` presentation components that display this part of the resume.
 - `Accomplishments`, a "smart" component you can navigate to via `/accomplishments`. This component contains `About`, `Award`, `Patent`, `Article`, `Conference` and `Mentorship` presentation components that display this part of the resume.
 - `About`, presentation component rendering info about you.
@@ -81,6 +81,7 @@ The terminal will display a variety of output, including the URL the site can be
 - `Volunteer`, presentation component rendering a volunteering.
 - `Skill`, presentation component rendering a skill.
 - `Certification`, presentation component rendering a certification.
+- `Community`, presentation component rendering a community.
 - `Award`, presentation component rendering an award.
 - `Patent`, presentation component rendering a patent.
 - `Article`, presentation component rendering an article.
@@ -119,11 +120,11 @@ It contains an interface `IResumeViewModel.cs` and a class that implements it `R
 
 The class is in charge of making a GET Request, *here to a static file `resume.json`*, and then load its info to a component when required.
 
-This is handy to separe the UI from the Models and, furthermore, a frontned developer can work separately from code logic within the components.
+This is handy to separate the UI from the Models and, furthermore, a frontend developer can work separately from code logic within the components.
 
 ### Styling
 
-Components rely mostly on `wwwroot/css/app.css`. And `wwwroot/img/*` contains background images for different templates.
+Components rely mostly on `wwwroot/css/app.css`.
 
 ## Resources
 

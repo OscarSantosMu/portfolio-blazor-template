@@ -21,5 +21,6 @@ namespace Portfolio.ViewModels
         public Task GetBackground();
         public Task GetAccomplishments();
         public Task GetProjects();
+        public Task<ProjectModel?> GetProject(string projectName);
     }
 }

@@ -3,7 +3,7 @@
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Step 1</h5>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckCheck">
+        <input class="form-check-input" type="checkbox" @bind="items[0].IsChecked" id="flexCheckCheck">
         <label class="form-check-label" for="flexCheckCheck">
           Done
       </label>
@@ -11,7 +11,7 @@
     </div>
     <p class="mb-1">Fork the GitHub repo.
     </p>
-    <small><a href=" https://github.com/OscarSantos98/portfolio-blazor-template/fork" target="_blank">You can do it
+    <small><a href=" https://github.com/OscarSantosMu/portfolio-blazor-template/fork" target="_blank">You can do it
         directly
         from here</a>.</small>
   </div>
@@ -19,7 +19,7 @@
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Step 2</h5>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckCheck">
+        <input class="form-check-input" type="checkbox" @bind="items[1].IsChecked" id="flexCheckCheck">
         <label class="form-check-label" for="flexCheckCheck">
           Done
         </label>
@@ -33,7 +33,7 @@
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Step 3</h5>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckCheck">
+        <input class="form-check-input" type="checkbox" @bind="items[2].IsChecked" id="flexCheckCheck">
         <label class="form-check-label" for="flexCheckCheck">
           Done
       </label>
@@ -47,7 +47,7 @@
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Step 4</h5>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckCheck">
+        <input class="form-check-input" type="checkbox" @bind="items[3].IsChecked" id="flexCheckCheck">
         <label class="form-check-label" for="flexCheckCheck">
           Done
       </label>
@@ -60,13 +60,39 @@
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Step 5</h5>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckCheck">
+        <input class="form-check-input" type="checkbox" @bind="items[4].IsChecked" id="flexCheckCheck">
         <label class="form-check-label" for="flexCheckCheck">
           Done
         </label>
       </div>
     </div>
     <p class="mb-1">Deploy your app!</p>
-    <small class="text-muted">If you have not chosen GitHub Codespaces to run your app, install Azure Static Web App extension or use Azure CLI to deploy this SPA, specifying the src folder.</small>
+    <small class="text-muted">Choose any platform of your choice. Just make sure to include a step to run <a href="https://github.com/OscarSantosMu/portfolio-blazor-template/blob/main/src/Scripts/remove-instructions.sh">remove-instructions.sh</a> on your CI/CD pipeline.</small>
   </div>
 </div>
+
+@if (items.All(x => x.IsChecked))
+{
+    <p>All checkboxes are checked!</p>
+    OnAllChecked.InvokeAsync(true);
+}
+
+@code {
+
+    [Parameter]
+    public EventCallback<bool> OnAllChecked { get; set; }
+    private List<Item> items = new List<Item>
+    {
+        new Item { Id = 1 },
+        new Item { Id = 2 },
+        new Item { Id = 3 },
+        new Item { Id = 4 },
+        new Item { Id = 5 }
+    };
+
+    private class Item
+    {
+        public int Id { get; set; }
+        public bool IsChecked { get; set; }
+    }
+}

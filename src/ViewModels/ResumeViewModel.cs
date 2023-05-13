@@ -57,6 +57,26 @@ namespace Portfolio.ViewModels
             LoadProjects(resume);
         }
 
+        public async Task<ProjectModel?> GetProject(string projectName)
+        {
+            ResumeModel? resume = await GetResume();
+            LoadProjects(resume);
+            foreach (var project in resume?.Projects ?? new List<ProjectModel>())
+            {
+                if (project.Title == projectName)
+                {
+                    Console.WriteLine("Project found");
+                    return project;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            Console.WriteLine("Project not found");
+            return null;
+        }
+
         private void LoadBackground(ResumeViewModel? resumeViewModel)
         {
             this.Name = resumeViewModel?.Name;
@@ -64,6 +84,7 @@ namespace Portfolio.ViewModels
             this.Experiences = resumeViewModel?.Experiences;
             this.Educations = resumeViewModel?.Educations;
             this.Volunteers = resumeViewModel?.Volunteers;
+            this.Communities = resumeViewModel?.Communities;
 
         }
 
