@@ -50,6 +50,43 @@ Finally, more components were added, and they are completely optional. If you do
  * [Visual Studio](https://visualstudio.microsoft.com/?wt.mc_id=studentamb_118941) or [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=studentamb_118941) or directly open a GitHub Codespace from a fork of this repo.
  * [.NET SDK 7](https://dotnet.microsoft.com/download/dotnet/7.0?wt.mc_id=studentamb_118941)
 
+### Clone, fork or generate from this template
+
+Whether you are going to work with the repository locally or remotely with GitHub Codespaces I recommend you to make a [fork](https://github.com/OscarSantosMu/portfolio-blazor-template/fork) of this repo, but generating a repo from it is also ok. The steps vary according to the method.
+
+#### Fork
+
+Once you have forked the repo. Either clone it or open it on a Codespace.
+
+| Local | Remote |
+|-------|--------|
+| ```git clone https://github.com/yourusername/portfolio-blazor-template.git``` | [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=575902179&skip_quickstart=true) |
+
+
+Then, enable GitHub Actions
+
+Click on the <button style="border-radius: 7px;">⏵ Actions</button> button. The following message will be displayed.
+
+![](static/img/from_fork.png)
+
+#### Generate from template
+
+Click on the <button style="color: #fff;
+    background-color: #2da44e;
+    border-color: rgba(27, 31, 36, 0.15);
+    box-shadow: 0 1px 0 rgba(27, 31, 36, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    padding: 4px 16px;
+    font-size: 14px;
+    border-radius: 7px;">Use this template ⏷︎</button> button
+
+Then, enable GitHub Action write permissions
+
+Click on <button style="border-radius: 7px;">⚙ Settings</button> button. Then, in the `Code and Automation` section click on `Actions` and then `General`. At the bottom of the page you will find the following section.
+
+![](static/img/from_template.png)
+
+Select `Read and write permissions` and check `Allow GitHub Actions to create and approve pull requests`. Finally `Save` your changes.
+
 ### Build and run
 
 To run the app, open up a terminal window and make sure you're in the same directory as the `Portfolio.csproj` file. (In this repo within the src folder). Then run:
@@ -59,6 +96,16 @@ dotnet run
 ```
 
 The terminal will display a variety of output, including the URL the site can be viewed at.
+
+### Deployment
+
+> By default, this repo is deployed to GitHub Pages, but you can choose another option, such as [Azure Static Web Apps](https://learn.microsoft.com/en-us/azure/static-web-apps/overview?wt.mc_id=studentamb_118941) or any other service. If doing so, delete [main.yml](.github/workflows/main.yml) and follow the steps of your service.
+
+The [main.yml](.github/workflows/main.yml) should create a branch called `gh-pages` on push. But you must manually enable GitHub pages for your repository.
+
+Click on <button style="border-radius: 7px;">⚙ Settings</button> button. Then, in the `Code and Automation` section click on `Pages`. Then, select the `gh-pages` branch as shown in the image below.
+
+![](static/img/enable_ghpages.png)
 
 ## Project details
 
