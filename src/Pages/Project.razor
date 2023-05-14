@@ -43,7 +43,7 @@
 
 @code {
     [Parameter]
-    public string ProjectName { get; set; }
+    public string ProjectName { get; set; } = "";
     public ProjectModel? project { get; set; }
     protected override async Task OnInitializedAsync()
     {
