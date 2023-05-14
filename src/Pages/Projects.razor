@@ -66,7 +66,7 @@
       foreach (var projectModel in _resumeViewModel.Projects)
       {
         @* Console.WriteLine($"Project: {projectModel.Title}"); *@
-        List<string> keyWords = projectModel.KeyWords.Split(',').ToList();
+        List<string> keyWords = projectModel?.KeyWords?.Split(',').ToList() ?? new List<string>();
         // Apply left strip to all keyWords
         keyWords = keyWords.Select(keyWord => keyWord.TrimStart()).ToList();
         // If no filters are selected, display all projects
@@ -107,9 +107,9 @@
 
 @code {
     private KeyWords keyWords = new KeyWords();
-    private string? condition { get; set; } = "or";
-    private string? selectedDomain { get; set; } = "";
-    private string? selectedTechStack { get; set; } = "";
+    private string condition { get; set; } = "or";
+    private string selectedDomain { get; set; } = "";
+    private string selectedTechStack { get; set; } = "";
     List<string> domains = new List<string> { "AI", "IoT", "Web", "Robotics" };
     List<string> techStacks = new List<string> { "Python", "C#", "C++", ".NET", "Blazor", "Flask", "TensorFlow", "MicroPython", "Matplotlib", "OpenGL" , "Windows Forms" };
 
@@ -122,8 +122,8 @@
         Console.WriteLine($"Selected domain: {keyWords.selectedDomain}");
         Console.WriteLine($"Selected tech stack: {keyWords.selectedTechStack}");
         condition = keyWords?.condition ?? "or";
-        selectedDomain = keyWords?.selectedDomain;
-        selectedTechStack = keyWords?.selectedTechStack;
+        selectedDomain = keyWords?.selectedDomain ?? "";
+        selectedTechStack = keyWords?.selectedTechStack ?? "";
         Console.WriteLine($"Condition: {condition}");
     }
 }

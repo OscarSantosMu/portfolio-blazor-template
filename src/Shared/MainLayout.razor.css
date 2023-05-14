@@ -9,7 +9,6 @@ main {
 }
 
 .sidebar {
-    /* background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%); */
     background-image: linear-gradient(180deg, #212529 0%, #495057 70%);
 }
 
@@ -76,38 +75,5 @@ main {
     article {
         padding-left: 2rem !important;
         padding-right: 1.5rem !important;
-    }
-    .float-md-left {
-        float: left !important;
-    }
-    .float-md-right {
-        float: right !important;
-    }
-    .float-md-none {
-        float: none !important;
-    }
-}
-
-@media (min-width: 992px) {
-    .float-lg-left {
-        float: left !important;
-    }
-    .float-lg-right {
-        float: right !important;
-    }
-    .float-lg-none {
-        float: none !important;
-    }
-}
-
-@media (min-width: 1200px) {
-    .float-xl-left {
-        float: left !important;
-    }
-    .float-xl-right {
-        float: right !important;
-    }
-    .float-xl-none {
-        float: none !important;
     }
 }

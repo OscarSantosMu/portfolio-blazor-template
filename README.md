@@ -48,7 +48,7 @@ Finally, more components were added, and they are completely optional. If you do
 
 ### Installs required
  * [Visual Studio](https://visualstudio.microsoft.com/?wt.mc_id=studentamb_118941) or [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=studentamb_118941) or directly open a GitHub Codespace from a fork of this repo.
- * [.NET SDK 6](https://dotnet.microsoft.com/download/dotnet/6.0?wt.mc_id=studentamb_118941)
+ * [.NET SDK 7](https://dotnet.microsoft.com/download/dotnet/7.0?wt.mc_id=studentamb_118941)
 
 ### Build and run
 
@@ -63,7 +63,7 @@ The terminal will display a variety of output, including the URL the site can be
 ## Project details
 
 - [Components](#components) - several components used to display pieces of the resume.
-    - The most important components are `Background.razor`, `Skills.razor` and `Accomplishments.razor`. These components are responsible for grabbing the resume's data and displaying it.
+    - The most important components are `Background.razor`, `Skills.razor`, `Accomplishments.razor` and `Projects.razor`. These components are responsible for grabbing the resume's data and displaying it.
 - Navigation - changes made to `Shared/NavMenu.razor` to update the left hand navigation.
 - [Data](#data) - a JSON file stored in `wwwroot/sample-data` that holds resume specific data.
 - C# representation of the resume. Code in `Shared/Models/Resume.cs` that model the data from the `resume.json` in C#. 
@@ -75,6 +75,8 @@ The terminal will display a variety of output, including the URL the site can be
 - `Background`, a "smart" component you can navigate to via `/background`. This component contains the `About`, `Experience`, `Education`, `Volunteer` and `Community` presentation components that display this part of the resume.
 - `Skills`, a "smart" component you can navigate to via `/skills`. This component contains the `About`, `Skill` and `Certification` presentation components that display this part of the resume.
 - `Accomplishments`, a "smart" component you can navigate to via `/accomplishments`. This component contains `About`, `Award`, `Patent`, `Article`, `Conference` and `Mentorship` presentation components that display this part of the resume.
+- `Projects`, a "smart" component you can navigate to via `/projects`. This component contains `About` and `ProjectCard`s presentation components that display this part of the resume.
+- `Project`, a "smart" component you can navigate to via `/project/{Project Name}`. Renders a project page.
 - `About`, presentation component rendering info about you.
 - `Experience`, presentation component rendering an experience.
 - `Education`, presentation component rendering an education.
@@ -87,7 +89,7 @@ The terminal will display a variety of output, including the URL the site can be
 - `Article`, presentation component rendering an article.
 - `Conference`, presentation component rendering a conference.
 - `Mentorship`, presentation component rendering a mentorship.
-
+- `ProjectCard`, presentation component rendering a project card.
 
 ### Data
 
