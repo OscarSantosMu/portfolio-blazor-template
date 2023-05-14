@@ -18,6 +18,8 @@ jobs:
       run: |
         chmod +x ./src/Scripts/remove-instructions.sh  
         bash ./src/Scripts/remove-instructions.sh
+        chmod +x ./src/Scripts/update-hrefs.sh  
+        bash ./src/Scripts/update-hrefs.sh
     
     # Install .NET Core SDK
     - name: Setup .NET Core
