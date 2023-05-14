@@ -2,9 +2,7 @@
 
 cd src || exit
 
-REPO_NAME=portfolio-blazor-template
-REPO_NAME2=$(basename ${{ github.repository }})
-echo $REPO_NAME2
+REPO_NAME=$(basename $1)
 
 # Check if file exists
 if [ -f "Pages/Index.razor" ]; then
