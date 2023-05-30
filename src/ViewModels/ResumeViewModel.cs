@@ -18,6 +18,27 @@ namespace Portfolio.ViewModels
         public List<ConferenceModel>? Conferences { get; set; }
         public List<MentorshipModel>? Mentorships { get; set; }
         public List<ProjectModel>? Projects { get; set; }
+        public List<ProjectModel> FilterProjects(string selectedDomain, string selectedTechStack, string condition)
+        {
+            List<ProjectModel> filteredProjects = new List<ProjectModel>();
+
+            foreach (var projectModel in Projects ?? new List<ProjectModel>())
+            {
+                List<string> keyWords = projectModel?.KeyWords?.Split(',').ToList() ?? new List<string>();
+                keyWords = keyWords.Select(keyWord => keyWord.TrimStart()).ToList();
+
+                bool matchesDomain = string.IsNullOrEmpty(selectedDomain) || keyWords.Contains(selectedDomain);
+                bool matchesTechStack = string.IsNullOrEmpty(selectedTechStack) || keyWords.Contains(selectedTechStack);
+
+                if ((condition == "or" && (matchesDomain || matchesTechStack))
+                    || (condition == "and" && matchesDomain && matchesTechStack))
+                {
+                    filteredProjects.Add(projectModel ?? new ProjectModel());
+                }
+            }
+
+            return filteredProjects;
+        }
 
         private HttpClient _httpClient;
 

@@ -36,8 +36,8 @@
                 <div class="form-group">
                     <label for="condition">and/or</label>
                     <InputSelect id="condition" class="form-control-dropdown-filter" @bind-Value="@keyWords.condition">
-                        <option value="or">or</option>
                         <option value="and">and</option>
+                        <option value="or">or</option>
                     </InputSelect>
                 </div>
             </div>
@@ -63,36 +63,9 @@
 
     @if (_resumeViewModel != null && _resumeViewModel.Projects != null)
     {
-      foreach (var projectModel in _resumeViewModel.Projects)
+      foreach (var projectModel in filteredProjects)
       {
-        @* Console.WriteLine($"Project: {projectModel.Title}"); *@
-        List<string> keyWords = projectModel?.KeyWords?.Split(',').ToList() ?? new List<string>();
-        // Apply left strip to all keyWords
-        keyWords = keyWords.Select(keyWord => keyWord.TrimStart()).ToList();
-        // If no filters are selected, display all projects
-        if (string.IsNullOrEmpty(selectedDomain) && string.IsNullOrEmpty(selectedTechStack))
-        {
-            <ProjectCard data=@projectModel></ProjectCard>
-        }
-        // If the project matches the selected domain or tech stack, display it
-        else if ((condition == "or") && ((selectedDomain != "" && keyWords.Contains(selectedDomain))
-                || (selectedTechStack != "" && keyWords.Contains(selectedTechStack))))
-        {
-            <ProjectCard data=@projectModel></ProjectCard>
-        }
-        // If the project matches the selected domain and tech stack, display it
-        else if ((condition == "and") && ((selectedDomain != "" && keyWords.Contains(selectedDomain))
-                && (selectedTechStack != "" && keyWords.Contains(selectedTechStack))))
-        {
-            <ProjectCard data=@projectModel></ProjectCard>
-        }
-        else
-        {
-          @* Console.WriteLine("No projects to display");
-          Console.WriteLine($"Domain: {selectedDomain}");
-          Console.WriteLine($"Tech Stack: {selectedTechStack}");
-          keyWords.ForEach(keyWord => Console.WriteLine(keyWord)); *@
-        }
+        <ProjectCard data=@projectModel></ProjectCard>
       }
     }
     else
@@ -107,13 +80,18 @@
 
 @code {
     private KeyWords keyWords = new KeyWords();
+    private List<ProjectModel> filteredProjects = new List<ProjectModel>();
     private string condition { get; set; } = "or";
     private string selectedDomain { get; set; } = "";
     private string selectedTechStack { get; set; } = "";
     List<string> domains = new List<string> { "AI", "IoT", "Web", "Robotics" };
     List<string> techStacks = new List<string> { "Python", "C#", "C++", ".NET", "Blazor", "Flask", "TensorFlow", "MicroPython", "Matplotlib", "OpenGL" , "Windows Forms" };
 
-    protected override async Task OnInitializedAsync() => await _resumeViewModel.GetProjects();
+    protected override async Task OnInitializedAsync()
+    {
+        await _resumeViewModel.GetProjects();
+        filteredProjects = _resumeViewModel.FilterProjects(selectedDomain, selectedTechStack, condition);
+    }
 
     private void HandleValidSubmit()
     {
@@ -121,9 +99,11 @@
         Console.WriteLine($"Selected condition: {keyWords.condition}");
         Console.WriteLine($"Selected domain: {keyWords.selectedDomain}");
         Console.WriteLine($"Selected tech stack: {keyWords.selectedTechStack}");
-        condition = keyWords?.condition ?? "or";
+        condition = keyWords?.condition ?? "and";
         selectedDomain = keyWords?.selectedDomain ?? "";
         selectedTechStack = keyWords?.selectedTechStack ?? "";
+        // Update the filtered projects based on the new filter values
+        filteredProjects = _resumeViewModel.FilterProjects(selectedDomain, selectedTechStack, condition);
         Console.WriteLine($"Condition: {condition}");
     }
 }
