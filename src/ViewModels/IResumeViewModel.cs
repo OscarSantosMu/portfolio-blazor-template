@@ -16,8 +16,8 @@ namespace Portfolio.ViewModels
         public List<ConferenceModel>? Conferences { get; set; }
         public List<MentorshipModel>? Mentorships { get; set; }
         public List<ProjectModel>? Projects { get; set; }
+        KeyWords keyWords { get; set; }
         public List<ProjectModel> FilterProjects(string selectedDomain, string selectedTechStack, string condition);
-
         public Task GetSkills();
         public Task GetBackground();
         public Task GetAccomplishments();

@@ -18,6 +18,7 @@ namespace Portfolio.ViewModels
         public List<ConferenceModel>? Conferences { get; set; }
         public List<MentorshipModel>? Mentorships { get; set; }
         public List<ProjectModel>? Projects { get; set; }
+        public KeyWords keyWords { get; set; } = new KeyWords();
         public List<ProjectModel> FilterProjects(string selectedDomain, string selectedTechStack, string condition)
         {
             List<ProjectModel> filteredProjects = new List<ProjectModel>();

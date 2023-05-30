@@ -16,14 +16,14 @@
     <h2>Projects</h2>
     
     <h4>Filter by</h4>
-      <EditForm Model="@keyWords" OnValidSubmit="@HandleValidSubmit">
+      <EditForm Model="@_resumeViewModel.keyWords" OnValidSubmit="@HandleValidSubmit">
         <DataAnnotationsValidator />
         <ValidationSummary />
         <div class="row">
             <div class="col">
                 <div class="form-group">
                     <label for="domain">Domain</label>
-                    <InputSelect id="domain" class="form-control-dropdown-filter" @bind-Value="@keyWords.selectedDomain">
+                    <InputSelect id="domain" class="form-control-dropdown-filter" @bind-Value="@_resumeViewModel.keyWords.selectedDomain">
                         <option value="">All</option>
                         @foreach (var domain in domains)
                         {
@@ -35,7 +35,7 @@
             <div class="col">
                 <div class="form-group">
                     <label for="condition">and/or</label>
-                    <InputSelect id="condition" class="form-control-dropdown-filter" @bind-Value="@keyWords.condition">
+                    <InputSelect id="condition" class="form-control-dropdown-filter" @bind-Value="@_resumeViewModel.keyWords.condition">
                         <option value="and">and</option>
                         <option value="or">or</option>
                     </InputSelect>
@@ -44,7 +44,7 @@
             <div class="col">
                 <div class="form-group">
                     <label for="techStack">Tech Stack</label>
-                    <InputSelect id="techStack" class="form-control-dropdown-filter" @bind-Value="@keyWords.selectedTechStack">
+                    <InputSelect id="techStack" class="form-control-dropdown-filter" @bind-Value="@_resumeViewModel.keyWords.selectedTechStack">
                         <option value="">All</option>
                         @foreach (var techStack in techStacks)
                         {
@@ -79,7 +79,6 @@
 </div>
 
 @code {
-    private KeyWords keyWords = new KeyWords();
     private List<ProjectModel> filteredProjects = new List<ProjectModel>();
     private string condition { get; set; } = "or";
     private string selectedDomain { get; set; } = "";
@@ -96,12 +95,12 @@
     private void HandleValidSubmit()
     {
         // Do something with the selected values
-        Console.WriteLine($"Selected condition: {keyWords.condition}");
-        Console.WriteLine($"Selected domain: {keyWords.selectedDomain}");
-        Console.WriteLine($"Selected tech stack: {keyWords.selectedTechStack}");
-        condition = keyWords?.condition ?? "and";
-        selectedDomain = keyWords?.selectedDomain ?? "";
-        selectedTechStack = keyWords?.selectedTechStack ?? "";
+        Console.WriteLine($"Selected condition: {_resumeViewModel.keyWords.condition}");
+        Console.WriteLine($"Selected domain: {_resumeViewModel.keyWords.selectedDomain}");
+        Console.WriteLine($"Selected tech stack: {_resumeViewModel.keyWords.selectedTechStack}");
+        condition = _resumeViewModel.keyWords?.condition ?? "and";
+        selectedDomain = _resumeViewModel.keyWords?.selectedDomain ?? "";
+        selectedTechStack = _resumeViewModel.keyWords?.selectedTechStack ?? "";
         // Update the filtered projects based on the new filter values
         filteredProjects = _resumeViewModel.FilterProjects(selectedDomain, selectedTechStack, condition);
         Console.WriteLine($"Condition: {condition}");
