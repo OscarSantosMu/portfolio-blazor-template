@@ -123,15 +123,6 @@
         "url": "https://hackmit.org/"
     }],
     "projects": [{
-            "title": "Project Portfolio Website with Blazor WebAssembly",
-            "description": "Open source project to build your project portfolio and host it online.",
-            "repourl": "https://github.com/OscarSantosMu/portfolio-blazor-template",
-            "url": "https://oscarsantosmu.github.io/portfolio-blazor-template",
-            "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/portfolio-blazor-template/main/static/img/skills.png",
-            "keywords": "C#, .NET, Blazor, Web",
-            "priority": 0
-        },
-        {
             "title": "Blender animations using human pose estimation AI models",
             "description": "Estimate pose, save the points of each frame of a video and upload those frames into Blender.",
             "repourl": "https://github.com/OscarSantosMu/TF_pose_estimation_and_Blender",
@@ -146,7 +137,7 @@
             "repourl": "https://github.com/OscarSantosMu/Building_your_First_IoT_Application_with_Flask_and_MicroPython",
             "url": "https://oscarsantosmu.github.io/Building_your_First_IoT_Application_with_Flask_and_MicroPython/",
             "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/Building_your_First_IoT_Application_with_Flask_and_MicroPython/main/static/demo.JPG",
-            "keywords": "Python, Flask, MicroPython, IoT, Web",
+            "keywords": "Python, Flask, MicroPython, IoT",
             "priority": 6
         },
         {
@@ -159,12 +150,48 @@
             "priority": 2
         },
         {
+            "title": "Analysis of SARS-CoV-2 Cases in Mexico",
+            "description": "Python data analysis using libraries such as matplotlib, plotly and folium. Web development using HTML, CSS, Bootstrap and Javascript.",
+            "repourl": "https://github.com/OscarSantosMu/COVID_in_Mexico",
+            "url": "https://jalopezgarcia01.github.io/CdeCMx-Challenge-2020/",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/COVID_in_Mexico/master/png/Population_under_study.png",
+            "keywords": "Python, Matplotlib, Folium, Data Science, Web",
+            "priority": 5
+        },
+        {
             "title": "Dynamics of SCARA Robot",
             "description": "Position, velocity, acceleration and torque calculation of a SCARA Robot.",
             "repourl": "https://github.com/OscarSantosMu/SCARA",
             "url": "https://oscarsantosmu.github.io/SCARA/",
             "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/SCARA/master/static/header.png",
             "keywords": "Python, Matplotlib, Robotics",
+            "priority": 4
+        },
+        {
+            "title": "EduEnvironments",
+            "description": "Creation of virtual educational work environments for students using Microsoft Azure, Terraform & Docker. Teachers are able to create preconfigured spaces ready-to-go with the tools needed to develop a laboratory practice or an online exam.",
+            "repourl": "https://github.com/OscarSantosMu/SIL_Project",
+            "url": "https://oscarsantosmu.github.io/SIL_Project/",
+            "imageurl": "https://user-images.githubusercontent.com/57787993/176706206-241d43f0-4138-4016-9838-73e3ecaf9b21.png",
+            "keywords": "Bash, Terraform, Microsoft Azure, Cloud",
+            "priority": 4
+        },
+        {
+            "title": "Project Portfolio Website with Blazor WebAssembly",
+            "description": "Open source project to build your project portfolio and host it online.",
+            "repourl": "https://github.com/OscarSantosMu/portfolio-blazor-template",
+            "url": "https://oscarsantosmu.github.io/portfolio-blazor-template",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/portfolio-blazor-template/main/static/img/skills.png",
+            "keywords": "C#, .NET, Blazor, Web",
+            "priority": 4
+        },
+        {
+            "title": "MLH Fellowship: Site Reliability Engineering",
+            "description": "The Site Reliability Engineering Program is an opportunity to learn how to become a great Site Reliability Engineer by completing an interactive curriculum that provides hands-on experience with the tools used by thousands of companies around the world.",
+            "repourl": "https://github.com/OscarSantosMu/mlh-fellowship-sre",
+            "url": "",
+            "imageurl": "https://raw.githubusercontent.com/OscarSantosMu/mlh-fellowship-sre/main/static/img/home.png",
+            "keywords": "Python, Flask, Docker, DevOps, GitHub, GitHub Actions, Bash, Web, Cloud, DigitalOcean, Prometheus, Grafana",
             "priority": 4
         },
         {
